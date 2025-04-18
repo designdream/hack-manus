@@ -20,6 +20,8 @@ wheels/
 .installed.cfg
 *.egg
 
+# IMPORTANT: Do NOT exclude .manus folders
+
 # Virtual environments
 venv/
 env/
