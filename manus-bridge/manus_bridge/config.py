@@ -6,18 +6,21 @@ This file contains paths and settings for connecting to the Manus system.
 import os
 from pathlib import Path
 
+# Base directory for all Manus data
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
 # Paths to Manus system components
 MANUS_OPT_PATH = os.environ.get(
     "MANUS_OPT_PATH", 
-    "/Users/feliperecalde/Downloads/Manual Library/opt"
+    os.path.join(BASE_DIR, "data", "opt")
 )
 MANUS_OPT2_PATH = os.environ.get(
     "MANUS_OPT2_PATH", 
-    "/Users/feliperecalde/Downloads/Manual Library/opt 2"
+    os.path.join(BASE_DIR, "data", "opt2")
 )
 MANUS_OPT3_PATH = os.environ.get(
     "MANUS_OPT3_PATH", 
-    "/Users/feliperecalde/Downloads/Manual Library/opt 3"
+    os.path.join(BASE_DIR, "data", "opt3")
 )
 
 # Manus sandbox runtime path

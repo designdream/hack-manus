@@ -46,7 +46,16 @@ class ManusBridge:
         logger.info(f"Initialized Manus Bridge with sandbox path: {self.sandbox_path}")
     
     def _validate_paths(self):
-        """Validate that all required Manus paths exist."""
+        """Validate that all required Manus paths exist and create them if needed."""
+        # Create base directories if they don't exist
+        for path in [config.MANUS_OPT_PATH, config.MANUS_OPT2_PATH, config.MANUS_OPT3_PATH]:
+            os.makedirs(path, exist_ok=True)
+            
+        # Create subdirectories
+        os.makedirs(os.path.join(config.MANUS_OPT_PATH, ".manus", "deploy", "templates"), exist_ok=True)
+        os.makedirs(os.path.join(config.MANUS_OPT2_PATH, ".manus", ".packages"), exist_ok=True)
+        os.makedirs(os.path.join(config.MANUS_OPT3_PATH, ".manus", ".sandbox-runtime"), exist_ok=True)
+        
         paths = [
             self.sandbox_path,
             self.templates_path,

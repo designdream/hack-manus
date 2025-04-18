@@ -9,7 +9,7 @@ services:
   source_dir: manus-bridge
   http_port: 8080
   instance_count: 1
-  instance_size_slug: basic-xxs
+  instance_size_slug: basic-s
   routes:
   - path: /
   envs:
@@ -18,15 +18,21 @@ services:
   - key: MANUS_BRIDGE_API_PORT
     value: "8080"
   - key: MANUS_OPT_PATH
-    value: "/opt/manus"
-    type: SECRET
+    value: "./data/opt"
   - key: MANUS_OPT2_PATH
-    value: "/opt/manus2"
-    type: SECRET
+    value: "./data/opt2"
   - key: MANUS_OPT3_PATH
-    value: "/opt/manus3"
-    type: SECRET
+    value: "./data/opt3"
   - key: MANUS_BRIDGE_DB_URL
     value: "sqlite:///manus_bridge.db"
-  build_command: pip install -e .
+  build_command: apt-get update && apt-get install -y chromium-browser && pip install -e .
   run_command: python run.py
+  envs:
+  - key: PYTHONUNBUFFERED
+    value: "1"
+  - key: PYTHONPATH
+    value: "."
+  - key: DISPLAY
+    value: ":99"
+  - key: CHROME_BIN
+    value: "/usr/bin/chromium-browser"
