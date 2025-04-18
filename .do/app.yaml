@@ -2,6 +2,10 @@ name: manus-bridge
 region: sfo
 services:
 - name: manus-bridge-api
+  github:
+    branch: master
+    deploy_on_push: true
+    repo: designdream/hack-manus
   source_dir: manus-bridge
   http_port: 8080
   instance_count: 1
