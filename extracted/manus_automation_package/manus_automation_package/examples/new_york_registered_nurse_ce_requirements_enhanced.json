@@ -1,0 +1,462 @@
+{
+  "metadata": {
+    "profession": "Registered Nurse",
+    "state": "New York",
+    "last_updated": "2025-04-14",
+    "schema_version": "2.0",
+    "data_source_urls": [
+      "https://www.nursingce.com/ceu-requirements/new-york",
+      "https://www.nursingce.com/ceu-requirements/new-york/rn"
+    ]
+  },
+  "regulatory_authority": {
+    "name": "New York State Board of Nursing",
+    "website": "https://www.op.nysed.gov/professions/registered-professional-nursing",
+    "ce_provider_approval_page": "https://www.op.nysed.gov/about/training-continuing-education",
+    "course_approval_page": "https://www.op.nysed.gov/about/training-continuing-education/infection-control",
+    "contact_information": {
+      "address": "New York State Education Department, Office of the Professions, State Board for Nursing, 89 Washington Avenue, Albany, NY 12234-1000",
+      "phone": "(518) 474-3817 ext. 120",
+      "email": "nursebd@nysed.gov",
+      "additional_contacts": []
+    }
+  },
+  "ce_provider_requirements": {
+    "state_approval_required": false,
+    "recognizes_national_accreditors": true,
+    "recognized_national_accreditors": [
+      "American Nurses Credentialing Center (ANCC)"
+    ],
+    "state_approval_process": {
+      "description": "New York State does not directly approve CE providers for general nursing CE, but does approve specific providers for mandatory courses like Infection Control.",
+      "fees": [],
+      "required_forms": [],
+      "required_documentation": [],
+      "application_steps": [],
+      "renewal_period": "",
+      "renewal_fees": [],
+      "renewal_requirements": []
+    },
+    "provider_criteria": {
+      "provider_qualifications": [],
+      "instructor_qualifications": [],
+      "facility_requirements": []
+    },
+    "approved_providers_list": {
+      "list_published": true,
+      "list_url": "https://www.op.nysed.gov/about/training-continuing-education/infection-control"
+    },
+    "approved_providers": [
+      {
+        "provider_name": "New York State Nurses Association",
+        "provider_id": "NYSNA-NY",
+        "approval_date": "2000-01-01",
+        "expiration_date": null,
+        "approved_course_types": [
+          "Infection Control",
+          "General CE"
+        ],
+        "website": "https://www.nysna.org/nursing-resources/continuing-education",
+        "contact_information": {
+          "email": "education@nysna.org",
+          "phone": "(518) 782-9400"
+        }
+      },
+      {
+        "provider_name": "New York State Department of Health",
+        "provider_id": "NYSDOH",
+        "approval_date": "2000-01-01",
+        "expiration_date": null,
+        "approved_course_types": [
+          "Infection Control",
+          "Child Maltreatment"
+        ],
+        "website": "https://www.health.ny.gov/community/disability/training/",
+        "contact_information": {
+          "email": "training@health.ny.gov",
+          "phone": "(518) 474-2011"
+        }
+      }
+    ]
+  },
+  "licensee_requirements": {
+    "license_types": [
+      {
+        "type": "RN",
+        "renewal_cycle": "3 years",
+        "total_hours_required": 9,
+        "restrictions": {
+          "max_online_hours": null,
+          "max_independent_study_hours": null,
+          "other_restrictions": [
+            "Must complete Infection Control training every 4 years",
+            "Must complete one-time Child Maltreatment training",
+            "Nurses with prescriptive authority must complete 3 hours in pain management, palliative care, and addiction every 3 years"
+          ]
+        },
+        "exemptions": [
+          "Newly licensed nurses during their first registration period"
+        ],
+        "documentation_requirements": [
+          "Name of provider",
+          "Name of program",
+          "Date of completion",
+          "Number of hours awarded",
+          "Certificate of completion"
+        ],
+        "audit_process": "The New York State Board of Nursing may conduct random audits to ensure compliance with continuing education requirements."
+      }
+    ]
+  },
+  "curriculum_standards": {
+    "course_approval_process": {
+      "individual_course_approval_required": true,
+      "application_process": "Courses for mandatory topics like Infection Control must be approved by the New York State Department of Education. General CE courses must be provided by ANCC-accredited providers.",
+      "approval_fees": [],
+      "review_timeline": "Varies by course type",
+      "required_documentation": [
+        "Course curriculum",
+        "Learning objectives",
+        "Assessment methods",
+        "Instructor qualifications"
+      ]
+    },
+    "learning_objectives_requirements": {
+      "format_requirements": "Learning objectives should be specific, measurable, and relevant to nursing practice.",
+      "assessment_requirements": "Assessment methods should evaluate whether learning objectives have been met."
+    },
+    "mandatory_topics": [
+      {
+        "topic_name": "Infection Control",
+        "required_hours": 6,
+        "frequency": "Every 4 years",
+        "applies_to": ["RN", "LPN", "NP"],
+        "description": "Training on infection prevention and control practices to prevent transmission of infectious agents.",
+        "specific_content_requirements": [
+          "Elements of infection control",
+          "Modes and mechanisms of transmission of pathogens",
+          "Prevention and control of infectious agents",
+          "Use of engineering and work practice controls",
+          "Selection and use of barriers and personal protective equipment",
+          "Prevention of occupational exposure to bloodborne pathogens"
+        ],
+        "first_required_by": "1992",
+        "regulatory_citation": "New York State Education Law §6505-b",
+        "course_ids": ["NY-IC-001", "NY-IC-002"]
+      },
+      {
+        "topic_name": "Child Maltreatment",
+        "required_hours": 2,
+        "frequency": "One-time requirement",
+        "applies_to": ["RN", "LPN", "NP"],
+        "description": "Training on identification and reporting of child abuse and maltreatment.",
+        "specific_content_requirements": [
+          "Recognition of child abuse and maltreatment",
+          "Reporting requirements",
+          "Legal obligations",
+          "Resources for victims"
+        ],
+        "first_required_by": "1990",
+        "regulatory_citation": "New York State Education Law §6507",
+        "course_ids": ["NY-CM-001"]
+      },
+      {
+        "topic_name": "Pain Management, Palliative Care, and Addiction",
+        "required_hours": 3,
+        "frequency": "Every 3 years",
+        "applies_to": ["NP with prescriptive authority"],
+        "description": "Training on pain management, palliative care, and addiction for nurses with prescriptive authority.",
+        "specific_content_requirements": [
+          "Pain assessment and management",
+          "Palliative care approaches",
+          "Recognition and management of substance use disorders",
+          "Appropriate prescribing practices",
+          "State and federal requirements for prescribing controlled substances"
+        ],
+        "first_required_by": "2018",
+        "regulatory_citation": "New York State Public Health Law §3309-a",
+        "course_ids": ["NY-PM-001", "NY-PM-002"]
+      }
+    ],
+    "specialty_requirements": []
+  },
+  "course_catalog": [
+    {
+      "course_id": "NY-IC-001",
+      "title": "Infection Control for New York Healthcare Professionals",
+      "description": "This course meets the New York State requirement for infection control training for healthcare professionals.",
+      "credit_hours": 6,
+      "credit_type": "ANCC",
+      "topics_covered": [
+        "Elements of infection control",
+        "Modes and mechanisms of transmission of pathogens",
+        "Prevention and control of infectious agents",
+        "Use of engineering and work practice controls",
+        "Selection and use of barriers and personal protective equipment",
+        "Prevention of occupational exposure to bloodborne pathogens"
+      ],
+      "learning_objectives": [
+        "Identify the elements of an effective infection control program",
+        "Describe the modes and mechanisms of transmission of pathogenic organisms",
+        "Apply appropriate infection prevention and control practices",
+        "Select and use appropriate barriers and personal protective equipment",
+        "Implement strategies to prevent occupational exposure to bloodborne pathogens"
+      ],
+      "approval_status": {
+        "state_approval_required": true,
+        "approved_by_state": true,
+        "approval_id": "NY-IC-2023-001",
+        "approval_date": "2023-01-15",
+        "expiration_date": "2027-01-15",
+        "renewal_process": "Submit updated curriculum to New York State Department of Education for review 60 days before expiration"
+      },
+      "delivery_methods": ["in-person", "live-online", "on-demand"],
+      "delivery_requirements": [
+        "On-demand courses must include interactive elements",
+        "All formats must include case studies"
+      ],
+      "assessment_methods": [
+        "Multiple-choice examination with minimum 80% passing score",
+        "Case study analysis"
+      ],
+      "approved_providers": [
+        {
+          "provider_name": "New York State Nurses Association",
+          "provider_id": "NYSNA-NY",
+          "course_offering_id": "NYSNA-IC-2023",
+          "website": "https://www.nysna.org/nursing-resources/continuing-education"
+        },
+        {
+          "provider_name": "New York State Department of Health",
+          "provider_id": "NYSDOH",
+          "course_offering_id": "NYSDOH-IC-2023",
+          "website": "https://www.health.ny.gov/community/disability/training/"
+        }
+      ],
+      "completion_requirements": [
+        "Attendance for full duration",
+        "Passing score on assessment"
+      ],
+      "documentation_provided": [
+        "Certificate of completion with provider name, course title, date, and CE hours"
+      ],
+      "cross_state_equivalency": [
+        {
+          "state": "New Jersey",
+          "equivalent_requirement": "Infection Control",
+          "notes": "Fully satisfies New Jersey's requirement"
+        },
+        {
+          "state": "Connecticut",
+          "equivalent_requirement": "Infection Control",
+          "notes": "Fully satisfies Connecticut's requirement"
+        }
+      ],
+      "regulatory_citations": [
+        "New York State Education Law §6505-b"
+      ],
+      "version_history": [
+        {
+          "version": "1.0",
+          "effective_date": "2023-01-15",
+          "changes": "Initial course approval"
+        },
+        {
+          "version": "1.1",
+          "effective_date": "2024-03-01",
+          "changes": "Updated content to reflect new CDC guidelines"
+        }
+      ]
+    },
+    {
+      "course_id": "NY-CM-001",
+      "title": "Child Maltreatment Identification and Reporting",
+      "description": "This course meets the New York State requirement for child maltreatment training for healthcare professionals.",
+      "credit_hours": 2,
+      "credit_type": "ANCC",
+      "topics_covered": [
+        "Recognition of child abuse and maltreatment",
+        "Reporting requirements",
+        "Legal obligations",
+        "Resources for victims"
+      ],
+      "learning_objectives": [
+        "Identify signs and symptoms of child abuse and maltreatment",
+        "Understand reporting requirements under New York State law",
+        "Apply appropriate intervention strategies",
+        "Connect victims with appropriate resources"
+      ],
+      "approval_status": {
+        "state_approval_required": true,
+        "approved_by_state": true,
+        "approval_id": "NY-CM-2023-001",
+        "approval_date": "2023-02-10",
+        "expiration_date": "2027-02-10",
+        "renewal_process": "Submit updated curriculum for review 60 days before expiration"
+      },
+      "delivery_methods": ["in-person", "live-online", "on-demand"],
+      "delivery_requirements": [
+        "Must include case studies",
+        "Must include resource information specific to New York"
+      ],
+      "assessment_methods": [
+        "Multiple-choice examination",
+        "Case-based assessment"
+      ],
+      "approved_providers": [
+        {
+          "provider_name": "New York State Department of Health",
+          "provider_id": "NYSDOH",
+          "course_offering_id": "NYSDOH-CM-2023",
+          "website": "https://www.health.ny.gov/community/disability/training/"
+        }
+      ],
+      "completion_requirements": [
+        "Attendance for full duration",
+        "Passing score on assessment"
+      ],
+      "documentation_provided": [
+        "Certificate of completion with provider name, course title, date, and CE hours"
+      ],
+      "cross_state_equivalency": [
+        {
+          "state": "New Jersey",
+          "equivalent_requirement": "Child Abuse Recognition and Reporting",
+          "notes": "Fully satisfies New Jersey's requirement"
+        }
+      ],
+      "regulatory_citations": [
+        "New York State Education Law §6507"
+      ],
+      "version_history": [
+        {
+          "version": "1.0",
+          "effective_date": "2023-02-10",
+          "changes": "Initial course approval"
+        }
+      ]
+    },
+    {
+      "course_id": "NY-PM-001",
+      "title": "Pain Management, Palliative Care, and Addiction for Prescribers",
+      "description": "This course meets the New York State requirement for pain management, palliative care, and addiction training for nurses with prescriptive authority.",
+      "credit_hours": 3,
+      "credit_type": "ANCC",
+      "topics_covered": [
+        "Pain assessment and management",
+        "Palliative care approaches",
+        "Recognition and management of substance use disorders",
+        "Appropriate prescribing practices",
+        "State and federal requirements for prescribing controlled substances"
+      ],
+      "learning_objectives": [
+        "Apply evidence-based approaches to pain assessment and management",
+        "Implement palliative care principles in patient care",
+        "Identify signs of substance use disorders",
+        "Apply appropriate prescribing practices for controlled substances",
+        "Comply with state and federal requirements for prescribing controlled substances"
+      ],
+      "approval_status": {
+        "state_approval_required": true,
+        "approved_by_state": true,
+        "approval_id": "NY-PM-2023-001",
+        "approval_date": "2023-03-15",
+        "expiration_date": "2026-03-15",
+        "renewal_process": "Submit updated curriculum for review 60 days before expiration"
+      },
+      "delivery_methods": ["in-person", "live-online", "on-demand"],
+      "delivery_requirements": [
+        "Must include case studies",
+        "Must include current New York State regulations"
+      ],
+      "assessment_methods": [
+        "Multiple-choice examination",
+        "Case-based assessment"
+      ],
+      "approved_providers": [
+        {
+          "provider_name": "New York State Nurses Association",
+          "provider_id": "NYSNA-NY",
+          "course_offering_id": "NYSNA-PM-2023",
+          "website": "https://www.nysna.org/nursing-resources/continuing-education"
+        }
+      ],
+      "completion_requirements": [
+        "Attendance for full duration",
+        "Passing score on assessment"
+      ],
+      "documentation_provided": [
+        "Certificate of completion with provider name, course title, date, and CE hours"
+      ],
+      "cross_state_equivalency": [
+        {
+          "state": "New Jersey",
+          "equivalent_requirement": "Opioid Prescribing",
+          "notes": "Fully satisfies New Jersey's requirement"
+        },
+        {
+          "state": "Pennsylvania",
+          "equivalent_requirement": "Opioid Education",
+          "notes": "Fully satisfies Pennsylvania's requirement"
+        }
+      ],
+      "regulatory_citations": [
+        "New York State Public Health Law §3309-a"
+      ],
+      "version_history": [
+        {
+          "version": "1.0",
+          "effective_date": "2023-03-15",
+          "changes": "Initial course approval"
+        },
+        {
+          "version": "1.1",
+          "effective_date": "2024-01-10",
+          "changes": "Updated content to reflect new opioid prescribing guidelines"
+        }
+      ]
+    }
+  ],
+  "regulations": {
+    "laws": [
+      "New York State Education Law §6505-b - Infection Control Training",
+      "New York State Education Law §6507 - Child Maltreatment Training",
+      "New York State Public Health Law §3309-a - Pain Management, Palliative Care, and Addiction Training"
+    ],
+    "administrative_codes": [
+      "8 NYCRR §29.2(a)(13) - Unprofessional Conduct",
+      "10 NYCRR §80.138 - Prescribing of Controlled Substances"
+    ],
+    "regulatory_citations": [
+      {
+        "citation_id": "New York State Education Law §6505-b",
+        "title": "Infection Control Training",
+        "url": "https://www.op.nysed.gov/about/training-continuing-education/infection-control",
+        "relevant_text": "Requires healthcare professionals to complete infection control training every four years.",
+        "last_updated": "2023-01-01"
+      },
+      {
+        "citation_id": "New York State Education Law §6507",
+        "title": "Child Maltreatment Training",
+        "url": "https://www.op.nysed.gov/about/training-continuing-education",
+        "relevant_text": "Requires healthcare professionals to complete a one-time course in child maltreatment identification and reporting.",
+        "last_updated": "2023-01-01"
+      },
+      {
+        "citation_id": "New York State Public Health Law §3309-a",
+        "title": "Pain Management, Palliative Care, and Addiction Training",
+        "url": "https://www.health.ny.gov/professionals/narcotic/",
+        "relevant_text": "Requires prescribers to complete at least three hours of coursework or training in pain management, palliative care, and addiction every three years.",
+        "last_updated": "2023-01-01"
+      }
+    ],
+    "recent_changes": [
+      {
+        "change_description": "Updated requirements for Pain Management, Palliative Care, and Addiction Training",
+        "effective_date": "2023-01-01",
+        "citation": "New York State Public Health Law §3309-a"
+      }
+    ]
+  },
+  "additional_notes": "New York State does not require a specific number of continuing education hours for license renewal, but does require completion of specific mandatory courses. The Infection Control course must be completed every four years, and the Child Maltreatment course is a one-time requirement. Nurses with prescriptive authority must complete the Pain Management, Palliative Care, and Addiction course every three years."
+}

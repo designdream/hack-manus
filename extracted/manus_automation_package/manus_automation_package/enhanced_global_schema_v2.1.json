@@ -1,0 +1,544 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Enhanced Healthcare Continuing Education Schema v2.1",
+  "description": "A comprehensive schema for healthcare continuing education requirements with enhanced course-level tracking and cross-state compatibility",
+  "type": "object",
+  "required": [
+    "metadata",
+    "regulatory_authority",
+    "ce_provider_requirements",
+    "licensee_requirements",
+    "curriculum_standards",
+    "course_catalog",
+    "regulations"
+  ],
+  "properties": {
+    "metadata": {
+      "type": "object",
+      "required": ["profession", "state", "last_updated", "schema_version"],
+      "properties": {
+        "profession": {
+          "type": "string",
+          "description": "The healthcare profession (e.g., 'Medical Doctor', 'Registered Nurse', 'Dentist')"
+        },
+        "state": {
+          "type": "string",
+          "description": "The state or territory name"
+        },
+        "last_updated": {
+          "type": "string",
+          "format": "date",
+          "description": "Date when this information was last verified"
+        },
+        "schema_version": {
+          "type": "string",
+          "description": "Version of the schema being used"
+        },
+        "data_source_urls": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "format": "uri"
+          },
+          "description": "URLs of authoritative sources used to compile this information"
+        }
+      }
+    },
+    "regulatory_authority": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string",
+          "description": "Name of the regulatory board or authority"
+        },
+        "website": {
+          "type": "string",
+          "format": "uri",
+          "description": "Official website URL"
+        },
+        "ce_provider_approval_page": {
+          "type": "string",
+          "format": "uri",
+          "description": "Direct URL to CE provider approval information"
+        },
+        "course_approval_page": {
+          "type": "string",
+          "format": "uri",
+          "description": "Direct URL to course approval information"
+        },
+        "contact_information": {
+          "type": "object",
+          "properties": {
+            "address": { "type": "string" },
+            "phone": { "type": "string" },
+            "email": { "type": "string" },
+            "additional_contacts": {
+              "type": "array",
+              "items": { "type": "string" }
+            }
+          }
+        }
+      }
+    },
+    "ce_provider_requirements": {
+      "type": "object",
+      "properties": {
+        "state_approval_required": {
+          "type": "boolean",
+          "description": "Whether state-specific approval is required to provide CE"
+        },
+        "recognizes_national_accreditors": {
+          "type": "boolean",
+          "description": "Whether the state recognizes national accreditors"
+        },
+        "recognized_national_accreditors": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "List of national accrediting bodies recognized by the state"
+        },
+        "state_approval_process": {
+          "type": "object",
+          "properties": {
+            "description": { "type": "string" },
+            "fees": {
+              "type": "array",
+              "items": { "type": "string" }
+            },
+            "required_forms": {
+              "type": "array",
+              "items": { "type": "string" }
+            },
+            "required_documentation": {
+              "type": "array",
+              "items": { "type": "string" }
+            },
+            "application_steps": {
+              "type": "array",
+              "items": { "type": "string" }
+            },
+            "renewal_period": { "type": "string" },
+            "renewal_fees": {
+              "type": "array",
+              "items": { "type": "string" }
+            },
+            "renewal_requirements": {
+              "type": "array",
+              "items": { "type": "string" }
+            }
+          }
+        },
+        "provider_criteria": {
+          "type": "object",
+          "properties": {
+            "provider_qualifications": {
+              "type": "array",
+              "items": { "type": "string" }
+            },
+            "instructor_qualifications": {
+              "type": "array",
+              "items": { "type": "string" }
+            },
+            "facility_requirements": {
+              "type": "array",
+              "items": { "type": "string" }
+            }
+          }
+        },
+        "approved_providers_list": {
+          "type": "object",
+          "properties": {
+            "list_published": { "type": "boolean" },
+            "list_url": { "type": "string", "format": "uri" }
+          }
+        },
+        "approved_providers": {
+          "type": "array",
+          "description": "List of specific providers approved by the state",
+          "items": {
+            "type": "object",
+            "properties": {
+              "provider_name": { "type": "string" },
+              "provider_id": { "type": "string" },
+              "approval_date": { "type": "string", "format": "date" },
+              "expiration_date": { "type": ["string", "null"], "format": "date" },
+              "approved_course_types": {
+                "type": "array",
+                "items": { "type": "string" },
+                "description": "Types of courses this provider is approved to offer"
+              },
+              "website": { "type": "string", "format": "uri" },
+              "contact_information": {
+                "type": "object",
+                "properties": {
+                  "email": { "type": "string" },
+                  "phone": { "type": "string" },
+                  "address": { "type": "string" }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "licensee_requirements": {
+      "type": "object",
+      "properties": {
+        "license_types": {
+          "type": "array",
+          "description": "Array of license types with their specific requirements",
+          "items": {
+            "type": "object",
+            "properties": {
+              "type": {
+                "type": "string",
+                "description": "The license type (e.g., 'RN', 'LPN', 'APRN', 'MD', 'DDS')"
+              },
+              "renewal_cycle": {
+                "type": ["string", "null"],
+                "description": "License renewal period (e.g., '2 years')"
+              },
+              "total_hours_required": {
+                "type": ["number", "null"],
+                "description": "Total CE hours required for renewal"
+              },
+              "restrictions": {
+                "type": "object",
+                "properties": {
+                  "max_online_hours": {
+                    "type": ["number", "null"],
+                    "description": "Maximum hours that can be completed online"
+                  },
+                  "max_independent_study_hours": {
+                    "type": ["number", "null"],
+                    "description": "Maximum hours that can be completed through independent study"
+                  },
+                  "other_restrictions": {
+                    "type": "array",
+                    "items": { "type": "string" },
+                    "description": "Other restrictions on CE hours"
+                  }
+                }
+              },
+              "exemptions": {
+                "type": "array",
+                "items": { "type": "string" },
+                "description": "Conditions under which licensees may be exempt from CE requirements"
+              },
+              "documentation_requirements": {
+                "type": "array",
+                "description": "Documentation that licensees must maintain",
+                "items": { "type": "string" }
+              },
+              "audit_process": {
+                "type": "string",
+                "description": "Description of how CE compliance is audited"
+              },
+              "carryover_allowance": {
+                "type": "object",
+                "description": "Rules for carrying over excess CE hours to next renewal period",
+                "properties": {
+                  "allowed": { "type": "boolean" },
+                  "max_hours": { "type": ["number", "null"] },
+                  "restrictions": {
+                    "type": "array",
+                    "items": { "type": "string" }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "curriculum_standards": {
+      "type": "object",
+      "properties": {
+        "course_approval_process": {
+          "type": "object",
+          "properties": {
+            "individual_course_approval_required": {
+              "type": "boolean",
+              "description": "Whether individual courses need separate approval"
+            },
+            "application_process": { "type": "string" },
+            "approval_fees": {
+              "type": "array",
+              "items": { "type": "string" }
+            },
+            "review_timeline": { "type": "string" },
+            "required_documentation": {
+              "type": "array",
+              "items": { "type": "string" }
+            }
+          }
+        },
+        "learning_objectives_requirements": {
+          "type": "object",
+          "properties": {
+            "format_requirements": { "type": "string" },
+            "assessment_requirements": { "type": "string" },
+            "documentation_requirements": {
+              "type": "array",
+              "items": { "type": "string" }
+            }
+          }
+        },
+        "mandatory_topics": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "topic_name": {
+                "type": "string",
+                "description": "Name of the mandatory topic"
+              },
+              "required_hours": {
+                "type": ["number", "null"],
+                "description": "Hours required"
+              },
+              "frequency": {
+                "type": "string",
+                "description": "How often the course must be completed"
+              },
+              "applies_to": {
+                "type": "array",
+                "items": { "type": "string" },
+                "description": "License types this requirement applies to"
+              },
+              "description": { "type": "string" },
+              "specific_content_requirements": {
+                "type": "array",
+                "items": { "type": "string" }
+              },
+              "first_required_by": {
+                "type": ["string", "null"],
+                "description": "When this requirement first took effect"
+              },
+              "regulatory_citation": {
+                "type": "string",
+                "description": "Reference to the regulation requiring this topic"
+              },
+              "course_ids": {
+                "type": "array",
+                "description": "References to specific courses in the course catalog that satisfy this requirement",
+                "items": { "type": "string" }
+              },
+              "state_approval_required": {
+                "type": "boolean",
+                "description": "Whether courses for this topic require specific state approval"
+              }
+            }
+          }
+        },
+        "specialty_requirements": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "specialty": { "type": "string" },
+              "additional_hours": { "type": "number" },
+              "additional_topics": {
+                "type": "array",
+                "items": { "type": "string" }
+              },
+              "regulatory_citation": { "type": "string" },
+              "course_ids": {
+                "type": "array",
+                "description": "References to specific courses in the course catalog that satisfy this requirement",
+                "items": { "type": "string" }
+              }
+            }
+          }
+        }
+      }
+    },
+    "course_catalog": {
+      "type": "array",
+      "description": "Catalog of specific courses that satisfy CE requirements",
+      "items": {
+        "type": "object",
+        "properties": {
+          "course_id": {
+            "type": "string",
+            "description": "Unique identifier for the course"
+          },
+          "title": {
+            "type": "string",
+            "description": "Course title"
+          },
+          "description": {
+            "type": "string",
+            "description": "Course description"
+          },
+          "credit_hours": {
+            "type": "number",
+            "description": "Number of CE hours/credits awarded"
+          },
+          "credit_type": {
+            "type": "string",
+            "description": "Type of credit (e.g., Category 1, ANCC)"
+          },
+          "topics_covered": {
+            "type": "array",
+            "items": { "type": "string" },
+            "description": "List of topics covered in the course"
+          },
+          "learning_objectives": {
+            "type": "array",
+            "items": { "type": "string" },
+            "description": "Learning objectives for the course"
+          },
+          "approval_status": {
+            "type": "object",
+            "properties": {
+              "state_approval_required": {
+                "type": "boolean",
+                "description": "Whether this specific course requires state approval"
+              },
+              "approved_by_state": {
+                "type": "boolean",
+                "description": "Whether the course is approved by the state regulatory authority"
+              },
+              "approval_id": {
+                "type": ["string", "null"],
+                "description": "State-issued approval identifier"
+              },
+              "approval_date": {
+                "type": ["string", "null"],
+                "format": "date",
+                "description": "Date when approval was granted"
+              },
+              "expiration_date": {
+                "type": ["string", "null"],
+                "format": "date",
+                "description": "Date when approval expires"
+              },
+              "renewal_process": {
+                "type": ["string", "null"],
+                "description": "Process for renewing course approval"
+              }
+            }
+          },
+          "delivery_methods": {
+            "type": "array",
+            "description": "Allowed delivery methods for this course",
+            "items": {
+              "type": "string",
+              "enum": ["in-person", "live-online", "on-demand", "self-study", "hybrid"]
+            }
+          },
+          "delivery_requirements": {
+            "type": "array",
+            "description": "Specific requirements for course delivery",
+            "items": { "type": "string" }
+          },
+          "assessment_methods": {
+            "type": "array",
+            "description": "Methods used to assess learning",
+            "items": { "type": "string" }
+          },
+          "approved_providers": {
+            "type": "array",
+            "description": "Providers approved to offer this specific course",
+            "items": {
+              "type": "object",
+              "properties": {
+                "provider_name": { "type": "string" },
+                "provider_id": { "type": "string" },
+                "course_offering_id": { "type": "string" },
+                "website": { "type": "string", "format": "uri" }
+              }
+            }
+          },
+          "completion_requirements": {
+            "type": "array",
+            "description": "Requirements for successful course completion",
+            "items": { "type": "string" }
+          },
+          "documentation_provided": {
+            "type": "array",
+            "description": "Documentation provided upon completion",
+            "items": { "type": "string" }
+          },
+          "cross_state_equivalency": {
+            "type": "array",
+            "description": "Other states where this course satisfies requirements",
+            "items": {
+              "type": "object",
+              "properties": {
+                "state": { "type": "string" },
+                "equivalent_requirement": { "type": "string" },
+                "notes": { "type": "string" }
+              }
+            }
+          },
+          "regulatory_citations": {
+            "type": "array",
+            "description": "Regulations related to this specific course",
+            "items": { "type": "string" }
+          },
+          "version_history": {
+            "type": "array",
+            "description": "History of course versions and updates",
+            "items": {
+              "type": "object",
+              "properties": {
+                "version": { "type": "string" },
+                "effective_date": { "type": "string", "format": "date" },
+                "changes": { "type": "string" }
+              }
+            }
+          },
+          "fulfills_mandatory_topics": {
+            "type": "array",
+            "description": "Mandatory topics this course fulfills",
+            "items": { "type": "string" }
+          },
+          "renewal_frequency": {
+            "type": "string",
+            "description": "How often licensees need to retake this course (e.g., 'one-time', 'every renewal', 'every 4 years')"
+          }
+        },
+        "required": ["course_id", "title", "credit_hours", "approval_status"]
+      }
+    },
+    "regulations": {
+      "type": "object",
+      "properties": {
+        "laws": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "administrative_codes": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "regulatory_citations": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "citation_id": { "type": "string" },
+              "title": { "type": "string" },
+              "url": { "type": "string", "format": "uri" },
+              "relevant_text": { "type": "string" },
+              "last_updated": { "type": "string", "format": "date" }
+            }
+          }
+        },
+        "recent_changes": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "change_description": { "type": "string" },
+              "effective_date": { "type": "string", "format": "date" },
+              "citation": { "type": "string" }
+            }
+          }
+        }
+      }
+    },
+    "additional_notes": { "type": "string" }
+  }
+}

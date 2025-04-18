@@ -1,0 +1,140 @@
+{
+  "state_priority_groups": [
+    {
+      "group_name": "High Population States",
+      "states": [
+        "California",
+        "Texas",
+        "Florida",
+        "New York",
+        "Pennsylvania",
+        "Illinois",
+        "Ohio",
+        "Georgia",
+        "North Carolina",
+        "Michigan"
+      ],
+      "rationale": "These states have the largest populations and therefore the most nurses, making them high priority."
+    },
+    {
+      "group_name": "Medium Population States",
+      "states": [
+        "New Jersey",
+        "Virginia",
+        "Washington",
+        "Arizona",
+        "Massachusetts",
+        "Tennessee",
+        "Indiana",
+        "Missouri",
+        "Maryland",
+        "Wisconsin",
+        "Colorado",
+        "Minnesota",
+        "South Carolina",
+        "Alabama",
+        "Louisiana",
+        "Kentucky",
+        "Oregon",
+        "Oklahoma",
+        "Connecticut",
+        "Utah"
+      ],
+      "rationale": "These states have medium-sized populations and represent a second tier priority."
+    },
+    {
+      "group_name": "Lower Population States",
+      "states": [
+        "Iowa",
+        "Nevada",
+        "Arkansas",
+        "Mississippi",
+        "Kansas",
+        "New Mexico",
+        "Nebraska",
+        "Idaho",
+        "West Virginia",
+        "Hawaii",
+        "New Hampshire",
+        "Maine",
+        "Montana",
+        "Rhode Island",
+        "Delaware",
+        "South Dakota",
+        "North Dakota",
+        "Alaska",
+        "Vermont",
+        "Wyoming"
+      ],
+      "rationale": "These states have smaller populations but still require complete coverage."
+    },
+    {
+      "group_name": "Territories",
+      "states": [
+        "District of Columbia",
+        "Puerto Rico",
+        "U.S. Virgin Islands",
+        "Guam",
+        "American Samoa",
+        "Northern Mariana Islands"
+      ],
+      "rationale": "U.S. territories also have nursing CE requirements that should be documented."
+    }
+  ],
+  "nursing_license_types": [
+    {
+      "type": "RN",
+      "full_name": "Registered Nurse",
+      "priority": 1,
+      "rationale": "Largest nursing profession category"
+    },
+    {
+      "type": "LPN/LVN",
+      "full_name": "Licensed Practical/Vocational Nurse",
+      "priority": 2,
+      "rationale": "Second largest nursing profession category"
+    },
+    {
+      "type": "APRN",
+      "full_name": "Advanced Practice Registered Nurse",
+      "priority": 3,
+      "rationale": "Includes multiple specialties with specific requirements"
+    },
+    {
+      "type": "NP",
+      "full_name": "Nurse Practitioner",
+      "priority": 4,
+      "rationale": "Subset of APRN with prescriptive authority and specific requirements"
+    },
+    {
+      "type": "CNM",
+      "full_name": "Certified Nurse-Midwife",
+      "priority": 5,
+      "rationale": "Specialized APRN role with specific requirements"
+    },
+    {
+      "type": "CRNA",
+      "full_name": "Certified Registered Nurse Anesthetist",
+      "priority": 6,
+      "rationale": "Specialized APRN role with specific requirements"
+    },
+    {
+      "type": "CNS",
+      "full_name": "Clinical Nurse Specialist",
+      "priority": 7,
+      "rationale": "Specialized APRN role with specific requirements"
+    }
+  ],
+  "recommended_processing_order": [
+    "Complete all RN requirements for High Population States",
+    "Complete all LPN/LVN requirements for High Population States",
+    "Complete all APRN requirements for High Population States",
+    "Complete all RN requirements for Medium Population States",
+    "Complete all LPN/LVN requirements for Medium Population States",
+    "Complete all APRN requirements for Medium Population States",
+    "Complete all RN requirements for Lower Population States",
+    "Complete all LPN/LVN requirements for Lower Population States",
+    "Complete all APRN requirements for Lower Population States",
+    "Complete all nursing requirements for Territories"
+  ]
+}
