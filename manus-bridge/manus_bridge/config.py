@@ -41,3 +41,8 @@ DB_URL = os.environ.get(
 # API settings
 API_HOST = os.environ.get("MANUS_BRIDGE_API_HOST", "127.0.0.1")
 API_PORT = int(os.environ.get("MANUS_BRIDGE_API_PORT", "8080"))
+
+# Browser control settings
+BROWSER_SESSIONS_PATH = os.path.join(BASE_DIR, "data", "browser_sessions")
+BROWSER_HEADLESS = os.environ.get("MANUS_BROWSER_HEADLESS", "false").lower() == "true"
+BROWSER_BIN = os.environ.get("CHROME_BIN", None)

@@ -25,14 +25,14 @@ services:
     value: "./data/opt3"
   - key: MANUS_BRIDGE_DB_URL
     value: "sqlite:///manus_bridge.db"
-  build_command: apt-get update && apt-get install -y chromium-browser && pip install -e .
+  build_command: pip install -e .
   run_command: python run.py
   envs:
   - key: PYTHONUNBUFFERED
     value: "1"
   - key: PYTHONPATH
     value: "."
-  - key: DISPLAY
-    value: ":99"
   - key: CHROME_BIN
-    value: "/usr/bin/chromium-browser"
+    value: "google-chrome"
+  - key: MANUS_BROWSER_HEADLESS
+    value: "true"

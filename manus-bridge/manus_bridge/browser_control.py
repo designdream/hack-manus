@@ -41,7 +41,7 @@ class BrowserSession:
         self.control_mode = "agent"  # "agent" or "human"
         
         # Create session directory
-        self.session_dir = os.path.join(config.BASE_DIR, "data", "browser_sessions", str(agent_id), self.session_id)
+        self.session_dir = os.path.join(config.BROWSER_SESSIONS_PATH, str(agent_id), self.session_id)
         os.makedirs(self.session_dir, exist_ok=True)
         
         # Session metadata
@@ -71,16 +71,30 @@ class BrowserSession:
     def start(self) -> Dict[str, Any]:
         """Start the browser session."""
         try:
+            # Check for browser binary from config or use defaults
+            browser_bin = config.BROWSER_BIN
+            if not browser_bin:
+                # Try to find browser binary
+                for path in ["/usr/bin/chromium-browser", "/usr/bin/google-chrome", "/usr/bin/chromium"]:
+                    if os.path.exists(path):
+                        browser_bin = path
+                        break
+                if not browser_bin:
+                    browser_bin = "google-chrome"  # Default fallback
+            
             # Prepare command for Chrome/Chromium with remote debugging
             cmd = [
-                "chromium-browser" if os.path.exists("/usr/bin/chromium-browser") else "google-chrome",
+                browser_bin,
                 f"--remote-debugging-port={self.debug_port}",
                 f"--user-data-dir={self.session_dir}/user_data",
                 "--no-first-run",
-                "--no-default-browser-check"
+                "--no-default-browser-check",
+                "--no-sandbox",  # Required for running in container environments
+                "--disable-dev-shm-usage"  # Avoid crashes in limited memory environments
             ]
             
-            if self.headless:
+            # Check if headless mode is forced via configuration
+            if self.headless or config.BROWSER_HEADLESS:
                 cmd.append("--headless=new")
             
             # Start browser process
@@ -227,7 +241,7 @@ class BrowserManager:
         self.agent_sessions = {}  # Map of agent_id to list of session_ids
         
         # Create sessions directory
-        self.sessions_dir = os.path.join(config.BASE_DIR, "data", "browser_sessions")
+        self.sessions_dir = config.BROWSER_SESSIONS_PATH
         os.makedirs(self.sessions_dir, exist_ok=True)
         
         logger.info("Initialized Browser Manager")
