@@ -1,0 +1,32 @@
+name: manus-bridge
+region: sfo
+services:
+- name: manus-bridge-api
+  github:
+    branch: master
+    deploy_on_push: true
+    repo: YOUR_GITHUB_USERNAME/hack-manus
+  source_dir: manus-bridge
+  http_port: 8080
+  instance_count: 1
+  instance_size_slug: basic-xxs
+  routes:
+  - path: /
+  envs:
+  - key: MANUS_BRIDGE_API_HOST
+    value: 0.0.0.0
+  - key: MANUS_BRIDGE_API_PORT
+    value: "8080"
+  - key: MANUS_OPT_PATH
+    value: "/opt/manus"
+    type: SECRET
+  - key: MANUS_OPT2_PATH
+    value: "/opt/manus2"
+    type: SECRET
+  - key: MANUS_OPT3_PATH
+    value: "/opt/manus3"
+    type: SECRET
+  - key: MANUS_BRIDGE_DB_URL
+    value: "sqlite:///manus_bridge.db"
+  build_command: pip install -e .
+  run_command: python run.py
